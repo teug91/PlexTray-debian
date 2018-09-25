@@ -1,0 +1,13 @@
+TODO:
+
+
+Bug:
+Traceback (most recent call last):
+  File "plextray.py", line 9, in <module>
+  File "/home/terje/.local/lib/python3.6/site-packages/PyInstaller/loader/pyimod03_importers.py", line 631, in exec_module
+    exec(bytecode, module.__dict__)
+  File "qtsingleapplication.py", line 26, in <module>
+  File "/home/terje/.local/lib/python3.6/site-packages/PyInstaller/loader/pyimod03_importers.py", line 714, in load_module
+    module = loader.load_module(fullname)
+ImportError: /tmp/_MEIc2uZOi/PySide2.QtNetwork.so: symbol _ZN17QNetworkInterface16staticMetaObjectE version Qt_5 not defined in file libQt5Network.so.5 with link time reference
+[17089] Failed to execute script plextray
