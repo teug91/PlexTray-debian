@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 #import sys, os
 from shared import resource_path
@@ -19,7 +19,7 @@ class TrayIcon(QSystemTrayIcon):
         """Initiates TrayIcon"""
         self._icon_plex = QIcon(resource_path("plex.png"))
         self._icon_dc = QIcon(resource_path("dc.png"))
-        super().__init__(self._icon_dc, parent=parentApp)
+        super(TrayIcon, self).__init__(self._icon_dc, parent=parentApp)
         self.setToolTip("PlexTray")
         menu = QMenu()
         menu.addAction("WebUI").triggered.connect(self._emit_webui)

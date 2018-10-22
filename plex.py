@@ -1,8 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import requests, webbrowser, time, urllib
 import xml.etree.ElementTree as ET
 from PySide2.QtCore import Signal, QThread
+from shared import open_browser
 
 class Plex(QThread):
     '''Communicates with PMS.'''
@@ -48,15 +49,11 @@ class Plex(QThread):
             for library in libraries:
                 media_key = self._get_media_key(library[0], library[1], file_path)
                 if media_key:
-                    webbrowser.open(base_media_url + media_key)
+                    open_browser(base_media_url + media_key)
                     return
             i += 1
             time.sleep(1)
         print("Did not find media")
-
-    def open_plex(self):
-        """Opens PMS in browser."""
-        webbrowser.open(self._host)
 
     def update_libraries(self):
         """Updates all libraries. Takes a long time for large libraries and could break collections."""

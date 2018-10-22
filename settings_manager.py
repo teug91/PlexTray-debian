@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import base64
 from PySide2.QtCore import (Signal, QSettings, QObject)
@@ -8,7 +8,7 @@ class SettingsManager(QObject):
 
     def __init__(self):
         """Initiates SettingsManager"""
-        super().__init__()
+        super(SettingsManager, self).__init__()
         self._settings = QSettings("/etc/PlexTray/config.ini", QSettings.IniFormat)
     
     def get_plex_host(self):
@@ -25,7 +25,11 @@ class SettingsManager(QObject):
 
     def get_timestamp(self):
         """Returns Pushbullet timestamp"""
-        return self._get_setting("timestamp")
+        timestamp = self._get_setting("timestamp")
+        if timestamp == "":
+            timestamp = 0
+        self.set_timestamp(timestamp)
+        return timestamp
 
     def set_plex_host(self, plex_host):
         """Sets Plex host"""
@@ -53,7 +57,7 @@ class SettingsManager(QObject):
         try:
             value = self._settings.value(key)
             if decode:
-                value = base64.b64decode(bytearray([int(i) for i in value])).decode()
+                value = base64.b64decode(value)
             return value
         except Exception as e:
             print("Failed to get " + key)

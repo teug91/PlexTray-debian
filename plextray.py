@@ -1,12 +1,13 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
-import sys, webbrowser
+import sys
 from plex import Plex
 from pushbullet import Pushbullet
 from settings_manager import SettingsManager
 from tray import TrayIcon
 from settings_window import Settings_Window
 from qtsingleapplication import QtSingleApplication
+from shared import open_browser
 
 class Application():
     """Application."""
@@ -86,7 +87,7 @@ class Application():
     def _on_webui_clicked(self):
         """Opens PMS page in browser."""
         if self._plex_host:
-            webbrowser.open(self._plex_host)
+            open_browser(self._plex_host)
 
     def _on_update_clicked(self):
         """Updates all PMS libraries."""

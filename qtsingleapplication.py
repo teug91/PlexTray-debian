@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 ########################################################################################################################################################
 #   From user user763305, Stackoverflow. See https://stackoverflow.com/questions/12712360/qtsingleapplication-for-pyside-or-pyqt

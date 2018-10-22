@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['plextray.py'],
-             pathex=['/home/terje/Documents/Projects/PlexTrayPython/PlexTrayPython'],
+             pathex=['/home/terje/Documents/Projects/PlexTray-debian/'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -14,8 +14,8 @@ a = Analysis(['plextray.py'],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
              cipher=block_cipher)
-a.datas += [('plex.png', './plex.png', "DATA"),
-            ('dc.png', './dc.png', "DATA")]
+a.datas += [('plex.png','/home/terje/Documents/Projects/PlexTray-debian/plex.png', "DATA"),
+            ('dc.png','/home/terje/Documents/Projects/PlexTray-debian/dc.png', "DATA")]
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,

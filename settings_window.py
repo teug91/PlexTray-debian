@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import time # REMOVE
 from shared import resource_path
@@ -19,7 +19,7 @@ class Settings_Window(QDialog):
         plex_token -- PMS token
         pushbullet_token -- Pushbullet token
         """
-        super().__init__(None, Qt.WindowSystemMenuHint | Qt.WindowTitleHint)
+        super(Settings_Window, self).__init__(None, Qt.WindowSystemMenuHint | Qt.WindowTitleHint)
         self.plex_host = QLineEdit()
         if plex_host:
             self.plex_host.setText(plex_host)

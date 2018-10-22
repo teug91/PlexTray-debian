@@ -1,7 +1,7 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import requests, json, time
-from urllib.request import urlopen, Request
+#from urllib import urlopen, Request
 import xml.etree.ElementTree as ET
 from PySide2.QtCore import Signal, QThread
 #from PySide2.QtWebSockets import QWebSocket
@@ -19,7 +19,7 @@ class Pushbullet(QThread):
         token -- Pushbullet token
         timestamp -- UNIX timestamp for last shown new media push
         """
-        QThread.__init__(self)
+        super(Pushbullet, self).__init__()
         self._stop = False
         self._token = token
         self._timestamp = timestamp
@@ -40,6 +40,7 @@ class Pushbullet(QThread):
         """Gets and emits new media added."""
         data = json.loads(self._get().text)
         try:
+            print(data)
             timestamp = data["pushes"][0]["modified"]
             if timestamp != self._timestamp:
                 self.update_timestamp.emit(timestamp)
