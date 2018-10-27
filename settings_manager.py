@@ -56,6 +56,8 @@ class SettingsManager(QObject):
         """
         try:
             value = self._settings.value(key)
+            if value == "":
+                return value
             if decode:
                 value = base64.b64decode(value)
             return value
