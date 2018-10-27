@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pyinstaller plextray.spec
+mv dist/PlexTray PlexTray_0.1-2/usr/local/bin/PlexTray
+dpkg-deb --build PlexTray_0.1-2
