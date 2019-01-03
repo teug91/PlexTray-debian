@@ -1,6 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-import time # REMOVE
 from shared import resource_path
 from PySide2.QtWidgets import (QWidget, QLineEdit, QPushButton, QApplication, QFormLayout, QVBoxLayout, QGridLayout, QDialog, QComboBox, QLabel, QCheckBox, QPushButton, QSizePolicy, QGroupBox)
 from PySide2.QtGui import QIcon

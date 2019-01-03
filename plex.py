@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import requests, webbrowser, time, urllib
 import xml.etree.ElementTree as ET

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import base64
 from PySide2.QtCore import (Signal, QSettings, QObject)
